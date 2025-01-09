@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IToDoList } from './list.model';
 
 @Component({
   selector: 'tdl-lists',
@@ -10,7 +11,10 @@ export class ListsComponent {
 
   
 
-  constructor(){
+  constructor(
 
+
+  ){
+    
   }
 }

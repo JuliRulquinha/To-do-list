@@ -7,15 +7,37 @@
             </div>
         </div>
         <div class="create-list">
-            <button class="new-list" onclick="openForm()">+</button>
-            New list
-            <form att="hidden"></form>
-        </div>
-       <script>
-            function openForm(){
+            
+            <form class="task-form">
+                <input name="txt-name" class="name" placeholder="Name" type="text" [(ngModel)]="toDoList.name"/>
+                <input name="txt-task" class="tasks" placeholder="Tasks" type="text" [(ngModel)]="task"/>
+                
+                <div class="sbtn">
+                    <button class="save-button" (click)="saveList()">✓</button>
+                    Save list
+                </div>
+                <div class="tbtn">
+                    <button class="task-button" (click)="addTask()">+</button>
+                    Add task
+                </div>
 
-            }
-       </script>
-        
+                
+            </form>
+        </div>
+
+        <div class="to-do-list">
+            
+            <ul>
+                <li *ngFor="let t of lists">
+                    {{t.name}}
+                    <ol>
+                        <li *ngFor="let task of t.tasks">
+                           {{task}}
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
     </div>
 </div>

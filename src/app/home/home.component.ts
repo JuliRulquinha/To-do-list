@@ -1,22 +1,43 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component} from '@angular/core';
+import { CommonModule} from '@angular/common';
+import { IToDoList, ToDoList } from '../lists/list.model';
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'tdl-home',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  lists: IToDoList[] = [];
+  toDoList: IToDoList;
+  task: string = '';
 
-  @Input() task: string = '';
-  list: string[] = [];
+  saveList(){
+   let toDoList: IToDoList = this.toDoList;
+   toDoList.tasks.push(this.task);
+   this.lists.push(toDoList);
+  }
 
-  createList(task: string){
-    this.list.push(task);
+  createList(list: IToDoList){
+    
+  }
+
+  addTask(){
+    this.toDoList.tasks.push(this.task)
   }
 
   displayList(){
-    return this.list;
+  
+  }
+
+  /**
+   *
+   */
+  constructor() {
+    this.toDoList = new ToDoList();
+    //this.toDoList.tasks.push(this.task)
+    this.addTask()
   }
 }
