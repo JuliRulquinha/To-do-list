@@ -1,0 +1,26 @@
+.icon{
+    height: 60px;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    background-color: rgb(215, 246, 255);
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-top: 10px;
+    margin: -3px -10px 0 -8px;
+    padding: 10px 8px 10px 20px;
+    border-bottom: rgb(0, 183, 255) 1px solid;
+}
+
+a{
+    margin: 20px;
+    text-decoration-line: none;
+    color: rgb(0, 146, 204);
+    font-family: Arial, Helvetica, sans-serif;
+}
